@@ -18,9 +18,7 @@
 
 -(id)initWithCode:(NSString*)code;
 -(NSString*)getCodeForYahoo;
-
 -(void)setRate:(NSString *)rate;
-
 -(NSNumber*)getRateAsNumber;
 
 @end

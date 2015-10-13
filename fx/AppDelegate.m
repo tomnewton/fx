@@ -88,16 +88,12 @@
 
 -(void)getFX {
     
-    NSNumberFormatter *f = [[NSNumberFormatter alloc] init];
-    f.numberStyle = NSNumberFormatterDecimalStyle;
-    
     for ( CurrencyPairVO* vo in self.vos ){
         NSString* rate = [self getRateForPair:[vo getCodeForYahoo]];
-        NSNumber* rateNum = [f numberFromString:rate];
         vo.rate = rate;
         [self.menu itemChanged:vo.menuItem];
         
-        float inverse = 1.0f / [rateNum floatValue];
+        float inverse = 1.0f / [vo.getRateAsNumber floatValue];
         vo.menuItem.toolTip =  [NSString stringWithFormat:@"Inverse: %f", inverse];
     }
     
