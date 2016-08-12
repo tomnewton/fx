@@ -55,7 +55,7 @@
     _statusItem.highlightMode = NO;
     _statusItem.toolTip = @"command-click to quit";
     
-    [_statusItem.image setTemplate:NO];
+    [_statusItem.image setTemplate:YES];
     [_statusItem setAction:@selector(itemClicked:)];
 }
 
